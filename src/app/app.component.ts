@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ecom';
+  items: Array<any> = ['angular', 'java', 'Bootstrap 5'];
 }

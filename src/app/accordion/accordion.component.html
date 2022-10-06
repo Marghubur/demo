@@ -1,0 +1,17 @@
+<ng-container *ngFor="let item of data; let i = index">
+  <div class="col-md-12 card m-2 mt-0" [ngClass]="{'active': i == indexdata}" id="accordino{{i}}">
+    <a href="javascript:void(0)" class="text-decoration-none text-dark" (click)="onClick(i)">
+      <div class="row justify-content-between align-items-center shadow-lg border p-3 card-header">
+        <div class="col-auto">
+          {{item.header}}
+        </div>
+        <div class="col-auto">
+          <i class="fa fa-caret-down"></i>
+        </div>
+      </div>
+    </a>
+    <div class="bg-white p-3 d-none child-body" >
+      <p class="mb-0">{{item.body}}</p>
+    </div>
+  </div>
+</ng-container>

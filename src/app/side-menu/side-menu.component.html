@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 bg-dark vh-100 side-nav-bar">
+     <div class="d-flex align-items-center justify-content-between py-2">
+        <a href="javascript:void(0)" class=" active text-decoration-none" (click)="expandNavbar()">
+          <h4 class="mb-0">aaa</h4>
+        </a>
+        <a href="javscript:void(0)" class="text-decoration-none" *ngIf="!collapsed" (click)="closeNavbar()">
+          <i class="fa fa-close fa-lg text-white"></i>
+        </a>
+     </div>
+     <div>
+      <ul class="list-unstyled">
+        <li *ngFor="let item of navData; let i = index;" class="my-2">
+          <a href="javascript:void(0)" class=" text-decoration-none text-white" (click)="showHideChild(i)">
+            <div class="d-flex align-items-center rounded p-2 nav-bar-item justify-content-between">
+              <i class="fa fa-lg py-2 nav-text" [ngClass]="item.icon"></i>
+              <span class="nav-text fw-bold" *ngIf="!collapsed">{{item.label}}</span>
+            </div>
+          </a>
+          <div class="bg-white rounded ms-3 mt-2 px-2 py-1" data-name="child-detail" *ngIf="!collapsed">
+            <ul class="list-unstyled rounded">
+              <li  *ngFor="let item of navData; let i=index" [ngClass]="{'border-bottom border-dark': navData.length > 0}">
+                <a href="javascript:void(0)" class="text-decoration-none text-white">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <i class="fa fa-lg py-2 text-dark" [ngClass]="item.icon"></i>
+                    <span class="text-dark fw-bold" *ngIf="!collapsed">{{item.label}}</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+     </div>
+    </div>
+    <div class="col-md-10 main-body">
+      <ul id="myUL">
+        <li><span class="caret">Beverages</span>
+          <ul class="nested">
+            <li>Water</li>
+            <li>Coffee</li>
+            <li><span class="caret">Tea</span>
+              <ul class="nested">
+                <li>Black Tea</li>
+                <li>White Tea</li>
+                <li><span class="caret">Green Tea</span>
+                  <ul class="nested">
+                    <li>Sencha</li>
+                    <li>Gyokuro</li>
+                    <li>Matcha</li>
+                    <li>Pi Lo Chun</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
