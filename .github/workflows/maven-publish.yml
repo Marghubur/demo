@@ -21,8 +21,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         server-id: github
-        server-username: ${{ secrets.GITHUB_ACTOR }}
-        server-password: ${{ secrets.GITHUB_TOKEN }}
+        server-username: ${{ secrets.JAVA_USERNAME }}
+        server-password: ${{ secrets.JAVA_TOKEN }}
 
     - name: Build and Deploy
       run: mvn deploy
